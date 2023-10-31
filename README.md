@@ -1,7 +1,9 @@
 ## Repositório de estudos sobre testes
 
 
-Instalação necessárias e configuração geral para testes:
+## Instalação necessárias e configuração geral para testes
+
+* Instalar bibliotecas de testes
 
   ```
   npm i jest @testing-library/react @testing-library/user-event @testing-library/jest-dom jest-environment-jsdom
@@ -34,7 +36,7 @@ Documentações:
 * [jsdom](https://github.com/jsdom/jsdom)
 
 
-## Configurar Jest e Testing Library no projeto
+## Configuração de acordo com a linguagem
 
 ### JavaScript
 * Instalar `@babel/preset-env` e `@babel/preset-react`
