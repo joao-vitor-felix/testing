@@ -1,11 +1,39 @@
 ## Repositório de estudos sobre testes
 
 
-Instalação necessárias para testes:
+Instalação necessárias e configuração geral para testes:
 
 ```
 npm i jest @testing-library/react @testing-library/user-event @testing-library/jest-dom jest-environment-jsdom
 ```
+
+* Criar arquivo de setup para importação do `jest-dom` em `./jest/setup.js` ou `./jest/setup.ts`
+
+```js
+// setup.js ou setup.ts
+import "@testing-library/jest-dom"
+```
+
+
+* Definir environment como `jsdom` no `jest.config.json`
+
+
+```json
+// jest.config.json
+
+{
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": ["<rootDir>/.jest/setup.js"]
+}
+```
+
+Documentações:
+* [testEnvironment](https://jestjs.io/docs/next/configuration#testenvironment-string)
+* [setupFilesAfterEnv](https://jestjs.io/docs/next/configuration#setupfilesafterenv-array)
+
+* [DOM Manipulation](https://jestjs.io/docs/next/tutorial-jquery)
+* [jsdom](https://github.com/jsdom/jsdom)
+
 
 ## Configurar Jest e Testing Library no projeto
 
@@ -18,7 +46,7 @@ npm i jest @testing-library/react @testing-library/user-event @testing-library/j
 
 * Criar arquivo `.babelrc` e configurar presets
 
-```
+```json
 // .babelrc
 {
   "presets": [
@@ -28,25 +56,7 @@ npm i jest @testing-library/react @testing-library/user-event @testing-library/j
 }
 ```
 
-* Configurar Jest para testar o DOM
-
-```
-// jest.config.json
-
-{
-    "testEnvironment": "jsdom",
-    "setupFilesAfterEnv": ["<rootDir>/.jest/setup.js"]
-}
-```
-
-jsdom and the jest-environment-jsdom package simulate a DOM environment as if you were in the browser. This means that every DOM API that we call can be observed in the same way it would be observed in a browser!
-
-
-
-
 Documentações:
-* [testEnvironment](https://jestjs.io/docs/next/configuration#testenvironment-string)
-* [setupFilesAfterEnv](https://jestjs.io/docs/next/configuration#setupfilesafterenv-array)
 
 * [Babel preset env](https://babeljs.io/docs/en/babel-preset-env)
 * [Babel React](https://babeljs.io/docs/en/babel-preset-react)
@@ -63,7 +73,7 @@ npm i ts-jest @types/jest -D
 * Adicionar `ts-jest` ao `preset` do `jest.config.json`
 
     
-```
+```json
 // jest.config.json
 
   {
@@ -71,6 +81,13 @@ npm i ts-jest @types/jest -D
     "testEnvironment": "jsdom",
     "setupFilesAfterEnv": ["<rootDir>/.jest/setup.ts"]
   }
+```
+
+* Adicionar `./jest/setup.ts` ao `tsconfig.json`
+
+```json
+// tsconfig.json
+"include": ["src", "./.jest/setup.ts"]
 ```
 
 Documentações:
