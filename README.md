@@ -53,10 +53,10 @@ Documentações:
 
 ### TypeScript
 
-* Instalar `ts-jest`
+* Instalar `ts-jest` e `@types/jest`
 
 ```
-npm i ts-jest -D
+npm i ts-jest @types/jest -D
 ```
 
 
