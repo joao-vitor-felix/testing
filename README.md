@@ -19,7 +19,6 @@ import "@testing-library/jest-dom"
 
 
 ```json
-// jest.config.json
 
 {
     "testEnvironment": "jsdom",
@@ -47,7 +46,6 @@ Documentações:
 * Criar arquivo `.babelrc` e configurar presets
 
 ```json
-// .babelrc
 {
   "presets": [
     ["@babel/preset-env"],
@@ -74,7 +72,6 @@ npm i ts-jest @types/jest -D
 
     
 ```json
-// jest.config.json
 
   {
     "preset": "ts-jest",
@@ -86,7 +83,6 @@ npm i ts-jest @types/jest -D
 * Adicionar `./jest/setup.ts` ao `tsconfig.json`
 
 ```json
-// tsconfig.json
 "include": ["src", "./.jest/setup.ts"]
 ```
 
