@@ -3,14 +3,18 @@
 
 Instalação necessárias para testes:
 
-```npm i jest @testing-library/react @testing-library/user-event @testing-library/jest-dom jest-environment-jsdom```
+```
+npm i jest @testing-library/react @testing-library/user-event @testing-library/jest-dom jest-environment-jsdom
+```
 
 ## Configurar Jest e Testing Library no projeto
 
 ### JavaScript
 * Instalar `@babel/preset-env` e `@babel/preset-react`
 
-    ```npm i @babel/preset-env @babel/preset-react -D```
+    ```
+    npm i @babel/preset-env @babel/preset-react -D
+    ```
 
 * Criar arquivo `.babelrc` e configurar presets
 
@@ -51,7 +55,9 @@ Documentações:
 
 * Instalar `ts-jest`
 
-```npm i ts-jest -D```
+```
+npm i ts-jest -D
+```
 
 
 * Adicionar `ts-jest` ao `preset` do `jest.config.json`
