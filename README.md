@@ -3,28 +3,28 @@
 
 Instalação necessárias e configuração geral para testes:
 
-```
-npm i jest @testing-library/react @testing-library/user-event @testing-library/jest-dom jest-environment-jsdom
-```
+  ```
+  npm i jest @testing-library/react @testing-library/user-event @testing-library/jest-dom jest-environment-jsdom
+  ```
 
 * Criar arquivo de setup para importação do `jest-dom` em `./jest/setup.js` ou `./jest/setup.ts`
 
-```js
-// setup.js ou setup.ts
-import "@testing-library/jest-dom"
-```
+  ```js
+  // setup.js ou setup.ts
+  import "@testing-library/jest-dom"
+  ```
 
 
 * Definir environment como `jsdom` no `jest.config.json`
 
 
-```json
+  ```json
 
-{
-    "testEnvironment": "jsdom",
-    "setupFilesAfterEnv": ["<rootDir>/.jest/setup.js"]
-}
-```
+  {
+      "testEnvironment": "jsdom",
+      "setupFilesAfterEnv": ["<rootDir>/.jest/setup.js"]
+  }
+  ```
 
 Documentações:
 * [testEnvironment](https://jestjs.io/docs/next/configuration#testenvironment-string)
@@ -45,14 +45,14 @@ Documentações:
 
 * Criar arquivo `.babelrc` e configurar presets
 
-```json
-{
-  "presets": [
-    ["@babel/preset-env"],
-    ["@babel/preset-react", { "runtime": "automatic" }]
-  ]
-}
-```
+  ```json
+  {
+    "presets": [
+      ["@babel/preset-env"],
+      ["@babel/preset-react", { "runtime": "automatic" }]
+    ]
+  }
+  ```
 
 Documentações:
 
@@ -63,28 +63,28 @@ Documentações:
 
 * Instalar `ts-jest` e `@types/jest`
 
-```
-npm i ts-jest @types/jest -D
-```
+  ```
+  npm i ts-jest @types/jest -D
+  ```
 
 
 * Adicionar `ts-jest` ao `preset` do `jest.config.json`
 
     
-```json
+  ```json
 
-  {
-    "preset": "ts-jest",
-    "testEnvironment": "jsdom",
-    "setupFilesAfterEnv": ["<rootDir>/.jest/setup.ts"]
-  }
-```
+    {
+      "preset": "ts-jest",
+      "testEnvironment": "jsdom",
+      "setupFilesAfterEnv": ["<rootDir>/.jest/setup.ts"]
+    }
+  ```
 
 * Adicionar `./jest/setup.ts` ao `tsconfig.json`
 
-```json
-"include": ["src", "./.jest/setup.ts"]
-```
+  ```json
+  "include": ["src", "./.jest/setup.ts"]
+  ```
 
 Documentações:
 
