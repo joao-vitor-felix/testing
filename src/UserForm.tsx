@@ -23,11 +23,11 @@ function UserForm({ onAddUser }: UserFormProps) {
     <form onSubmit={handleSubmit}>
       <div>
         <label>Name</label>
-        <input value={name} onChange={(e) => setName(e.target.value)} />
+        <input value={name} onChange={(e) => setName(e.target.value)} placeholder='Enter your name' />
       </div>
       <div>
         <label>Email</label>
-        <input value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter your email' />
       </div>
       <button>Add User</button>
     </form>
