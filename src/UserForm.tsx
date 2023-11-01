@@ -1,13 +1,22 @@
 import { FormEvent, useState } from 'react';
 
-function UserForm() {
-  const [email, setEmail] = useState('');
+type UserFormProps = {
+  onAddUser: (users: {name: string, email: string}) => void;
+}
+
+function UserForm({ onAddUser }: UserFormProps) {
   const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
 
-    console.log(name, email);
+    const user = {
+      name,
+      email
+    };
+
+   return onAddUser(user);
   };
 
   return (
