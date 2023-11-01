@@ -23,6 +23,7 @@ describe('UserForm', () => {
         await userEvent.type(email, 'john@doe.com')
     
         await userEvent.click(button);
+        expect(onAddUser).toHaveBeenCalledTimes(1)
         expect(onAddUser).toHaveBeenCalledWith({name: 'John Doe', email: 'john@doe.com'})
     })
     
