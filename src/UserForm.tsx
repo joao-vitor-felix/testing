@@ -16,6 +16,9 @@ function UserForm({ onAddUser }: UserFormProps) {
       email,
     };
 
+    setName("");
+    setEmail("");
+
     return onAddUser(user);
   };
 
