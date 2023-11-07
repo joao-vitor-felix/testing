@@ -12,6 +12,9 @@ function UserForm({ onAddUser }) {
       email,
     };
 
+    setName("");
+    setEmail("");
+
     return onAddUser(user);
   };
 

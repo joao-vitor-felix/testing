@@ -41,4 +41,20 @@ describe("UserForm", () => {
     expect(name).toHaveValue("John Doe");
     expect(email).toHaveValue("john@doe.com");
   });
+
+  it("should clean up the inputs when the form is submitted", async () => {
+    render(<UserForm onAddUser={() => {}} />);
+    const name = screen.getByRole("textbox", { name: /name/i });
+    const email = screen.getByRole("textbox", { name: /email/i });
+    const button = screen.getByRole("button");
+
+    await userEvent.type(name, "John Doe");
+    await userEvent.type(email, "john@doe.com");
+
+    expect(name).toHaveValue("John Doe");
+    expect(email).toHaveValue("john@doe.com");
+    await userEvent.click(button);
+    expect(name).toHaveValue("");
+    expect(email).toHaveValue("");
+  });
 });
